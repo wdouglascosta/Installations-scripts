@@ -1,0 +1,72 @@
+-----------------------------------------------------------------------------------------------------------------------------------
+- sudo su
+-----------------------------------------------------------------------------------------------------------------------------------
+- Baixar Java e Tomcat  no diretório /usr/local/java
+
+- cd /usr/local/java/dir_do_seu_tomcat
+-----------------------------------------------------------------------------------------------------------------------------------
+- nano conf/tomcat-users.xml
+- Padrão do arquivo:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcat-users xmlns="http://tomcat.apache.org/xml"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
+              version="1.0">
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager"/>
+<role rolename="admin-gui"/>
+<role rolename="admin-script"/>
+<role rolename="admin"/>
+<user username="seu_usuario" password="sua_senha" roles="manager-gui,admin-gui,manager,admin,manager-script,admin-script"/>
+</tomcat-users>
+-----------------------------------------------------------------------------------------------------------------------------------
+- nano webapps/manager/META-INF/context.xml
+- Padrão do arquivo:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiResourceLocking="false" privileged="true" >
+ <!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+
+</Context>
+-----------------------------------------------------------------------------------------------------------------------------------
+- nano bin/tomcat9.sh
+- Padrão do arquivo:
+
+#!/bin/bash
+# Provides:        tomcat9
+# Required-Start:  $network
+# Required-Stop:   $network
+# Default-Start:   2 3 4 5
+# Default-Stop:    0 1 6
+# Short-Description: Start/Stop Tomcat server
+### END INIT INFO
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+export JAVA_HOME=/usr/local/java/jdk1.8.0_91
+
+start() {
+ sh /usr/local/java/apache-tomcat-9.0.0.M8/bin/startup.sh
+}
+
+stop() {
+ sh /usr/local/java/apache-tomcat-9.0.0.M8/bin/shutdown.sh
+}
+
+case $1 in
+  start|stop) $1;;
+  restart) stop; start;;
+  *) echo "Run as $0 <start|stop|restart>"; exit 1;;
+esac
+-----------------------------------------------------------------------------------------------------------------------------------
+Opção de Instalação Java via PPA:
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java8-set-default
+sudo update-alternatives --config java
+
+

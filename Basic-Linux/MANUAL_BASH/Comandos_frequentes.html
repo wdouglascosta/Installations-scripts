@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br" dir="ltr">
+	
+<!-- Mirrored from www.linux.ime.usp.br/wiki/Comandos_frequentes by HTTrack Website Copier/3.x [XR&CO'2007], Mon, 21 Jan 2008 17:53:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Comandos frequentes,Terminal avançado,Terminal Básico" />
+<link rel="shortcut icon" href="http://www.linux.ime.usp.br/favicon.ico" />
+<link title="Creative Commons" type="application/rdf+xml" href="http://www.linux.ime.usp.br/mediawiki/index.php?title=Comandos_frequentes&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+		<title>Comandos frequentes - Rede Linux</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "http://www.linux.ime.usp.br/mediawiki/skins/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="http://www.linux.ime.usp.br/mediawiki/skins/common/commonPrint.css" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/mediawiki/skins/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/mediawiki/skins/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/mediawiki/skins/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/mediawiki/skins/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/mediawiki/skins/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		<script type="text/javascript">var skin = 'monobook';var stylepath = '/mediawiki/skins';</script>
+		<script type="text/javascript" src="http://www.linux.ime.usp.br/mediawiki/skins/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="http://www.linux.ime.usp.br/mediawiki/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "http://www.linux.ime.usp.br/mediawiki/index.php?title=MediaWiki:Common.css&amp;action=raw&amp;ctype=text/css&amp;smaxage=18000";
+@import "http://www.linux.ime.usp.br/mediawiki/index.php?title=MediaWiki:Monobook.css&amp;action=raw&amp;ctype=text/css&amp;smaxage=18000";
+@import "http://www.linux.ime.usp.br/mediawiki/index.php?title=-&amp;action=raw&amp;gen=css&amp;maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript">
+				var wgScriptPath="/mediawiki";
+				var wgServer="http://www.linux.ime.usp.br/";
+			</script><script type="text/javascript" src="http://www.linux.ime.usp.br/mediawiki/skins/common/ajax.js"></script>
+	</head>
+<body  class="ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Comandos frequentes</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">De Rede Linux</h3>
+			<div id="contentSub"></div>
+                        <div>Veja tambem:<br>
+                        <a href="Terminal_basico.html">Terminal basico</a> <br>
+                        <a href="Terminal_avancado.html">Terminal avançado<a> <br>
+                        </div>
+		<!-- start content -->
+			<p>Este guia serve apenas como referência, portanto, os comandos são explicados sucintamente. Para uma explicação mais detalhadaconsulte o goog ou utilize "man comando" ou "info comando"
+</p><p>Na coluna sintaxe, temos: nome do comando [argumentos opcionais] &lt;argumentos obrigatorios&gt;
+</p>
+<table id="toc" class="toc" summary="Conteúdo"><tr><td><div id="toctitle"><h2>Conteúdo</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Comandos_simples_.28e.2Fou_abordados_em_.22terminal_b.C3.A1sico.22.29"><span class="tocnumber">1</span> <span class="toctext">Comandos simples (e/ou abordados em "terminal básico")</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Comandos_utilizados_em_.22terminal_b.C3.A1sico.22"><span class="tocnumber">1.1</span> <span class="toctext">Comandos utilizados em "terminal básico"</span></a></li>
+<li class="toclevel-2"><a href="#Mais_comandos_b.C3.A1sicos"><span class="tocnumber">1.2</span> <span class="toctext">Mais comandos básicos</span></a></li>
+<li class="toclevel-2"><a href="#Comandos_de_ajuda"><span class="tocnumber">1.3</span> <span class="toctext">Comandos de ajuda</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Comandos_mais_complexos.2C_de_uso_menos_freq.C3.BCente.2C_ou_de_.22terminal_avan.C3.A7ado.22"><span class="tocnumber">2</span> <span class="toctext">Comandos mais complexos, de uso menos freqüente, ou de "terminal avançado"</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Manipula.C3.A7.C3.A3o_de_texto"><span class="tocnumber">2.1</span> <span class="toctext">Manipulação de texto</span></a></li>
+<li class="toclevel-2"><a href="#Ferramentas_de_programa.C3.A7.C3.A3o"><span class="tocnumber">2.2</span> <span class="toctext">Ferramentas de programação</span></a></li>
+<li class="toclevel-2"><a href="#Processos:_Destravando_ou_evitando_travamentos"><span class="tocnumber">2.3</span> <span class="toctext">Processos: Destravando ou evitando travamentos</span></a></li>
+<li class="toclevel-2"><a href="#Sortidos"><span class="tocnumber">2.4</span> <span class="toctext">Sortidos</span></a></li>
+<li class="toclevel-2"><a href="#Comandos_de_uso_menos_freq.C3.BCente"><span class="tocnumber">2.5</span> <span class="toctext">Comandos de uso menos freqüente</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "mostrar"; var tocHideText = "esconder"; showTocToggle(); } </script>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.linux.ime.usp.br/mediawiki/index.php?title=Comandos_frequentes&amp;action=edit&amp;section=1" title="Editar secção: Comandos simples (e/ou abordados em &quot;terminal básico&quot;)">editar</a>]</div><a name="Comandos_simples_.28e.2Fou_abordados_em_.22terminal_b.C3.A1sico.22.29"></a><h2> Comandos simples (e/ou abordados em "terminal básico") </h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.linux.ime.usp.br/mediawiki/index.php?title=Lista_de_comandos_simples&amp;action=edit&amp;section=1" title="Lista de comandos simples">editar</a>]</div><a name="Comandos_utilizados_em_.22terminal_b.C3.A1sico.22"></a><h3> Comandos utilizados em "terminal básico" </h3>
+<table border="1">
+<tr>
+<td>Comando  	</td><td> Utilidade </td><td> sintaxe </td><td> Obs
+</td></tr>
+<tr>
+<td> pwd </td><td> imprime o diretório atual </td><td> pwd </td><td>
+</td></tr>
+<tr>
+<td> ls 	</td><td> lista os arquivos de [diretório]  </td><td> ls [diretorio] </td><td> Se chamado sem argumentos, lista os arquivos do diretório atual.
+</td></tr>
+<tr>
+<td> cd 	</td><td> seu "diretório atual" passa a ser [diretório] </td><td> cd [diretorio] </td><td> Sem argumentos, muda para seu diretório inicial (home/&lt;curso&gt;/&lt;login&gt; , chamado de "seu diretório home" para confundir =P).
+</td></tr>
+<tr>
+<td> rm 	</td><td> exclui arquivos </td><td> rm &lt;arquivo1&gt; [arquivos2,3 ...] </td><td>
+<ul><li> dá pra remover diretórios cheios com "rm -r"
+</li><li> para evitar acidente, remova diretórios vazios com "rmdir"
+</li></ul>
+</td></tr>
+<tr>
+<td> mkdir	</td><td> cria diretórios </td><td> mkdir &lt;diretório&gt; </td><td>
+</td></tr>
+<tr>
+<td> touch	</td><td> cria arquivos   </td><td> touch &lt;arquivo&gt;  </td><td> escondi a verdadeira utilidade desse comando "debaixo do tapete "
+</td></tr>
+<tr>
+<td> mv   </td><td> move coisas (arquivos e diretórios) </td><td> mv &lt;origem&gt; &lt;destino&gt; </td><td>
+<ul><li> se &lt;origem&gt; e &lt;destino&gt; forem arquivos, você sobreescreve o &lt;destino&gt;. 
+</li><li> se &lt;destino&gt; for um diretório, você põe &lt;origem&gt; dentro dele
+</li><li> &lt;origem&gt; pode ser um conjunto de arquivos e diretórios, desde que &lt;destino&gt; seja um diretório
+</li><li> se &lt;destino&gt; não existir, fica sendo um "renomear"
+</li></ul>
+</td></tr>
+<tr>
+<td> find  </td><td> imprime listas de arquivos em "diretório" </td><td> find &lt;diretório&gt; </td><td> find &lt;diretório&gt; -iname 'nome'
+<p>localiza arquivos com esse nome no diretório. detalhes <a href="./Terminal_basico.html" class="new" title="Terminal Básico">aqui</a>
+</p>
+</td></tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.linux.ime.usp.br/mediawiki/index.php?title=Lista_de_comandos_simples&amp;action=edit&amp;section=2" title="Lista de comandos simples">editar</a>]</div><a name="Mais_comandos_b.C3.A1sicos"></a><h3> Mais comandos básicos </h3>
+<table border="1">
+<tr>
+<td>Comando  	</td><td> Utilidade </td><td> sintaxe </td><td> Obs
+</td></tr>
+<tr>
+<td> echo 	</td><td> imprime strings na tela </td><td> echo &lt;string&gt; </td><td>
+</td></tr>
+<tr>
+<td> cp 	</td><td> copia arquivos	   </td><td> cp &lt;fonte&gt; &lt;destino&gt; 	</td><td> "cp arquivo1 arquivo2" sobreescreve o arquivo2, se ele existir&nbsp;!
+</td></tr>
+<tr>
+<td> date	</td><td> imprime a data do sistema 	</td><td> date </td><td>
+</td></tr>
+<tr>
+<td> cal	</td><td> imprime um calendário  	</td><td> cal </td><td>
+</td></tr>
+<tr>
+<td> rwho  </td><td> lista os usuários conectados à rede </td><td> rwho </td><td>
+</td></tr>
+<tr>
+<td> less  </td><td> ler arquivo texto </td><td> less &lt;arquivo&gt; </td><td>
+</td></tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.linux.ime.usp.br/mediawiki/index.php?title=Lista_de_comandos_simples&amp;action=edit&amp;section=3" title="Lista de comandos simples">editar</a>]</div><a name="Comandos_de_ajuda"></a><h3> Comandos de ajuda </h3>
+<table border="1">
+<tr>
+<td>Comando  	</td><td> Utilidade </td><td> sintaxe </td><td> Obs
+</td></tr>
+<tr>
+<td> man </td><td> manual </td><td> man &lt;comando&gt; </td><td>
+<ul><li> às vezes é meio técnico demais
+</li><li> dê uma olhada em "man man"
+</li></ul>
+</td></tr>
+<tr>
+<td> info </td><td> manual chique </td><td> info &lt;comando&gt; </td><td>
+<ul><li>Se propõe a ser mais amigável
+</li><li>Para aprender a lidar com a interface, "info info"
+</li></ul>
+</td></tr></table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.linux.ime.usp.br/mediawiki/index.php?title=Comandos_frequentes&amp;action=edit&amp;section=2" title="Editar secção: Comandos mais complexos, de uso menos freqüente, ou de &quot;terminal avançado&quot;">editar</a>]</div><a name="Comandos_mais_complexos.2C_de_uso_menos_freq.C3.BCente.2C_ou_de_.22terminal_avan.C3.A7ado.22"></a><h2> Comandos mais complexos, de uso menos freqüente, ou de "terminal avançado"  </h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.linux.ime.usp.br/mediawiki/index.php?title=Lista_de_comandos_avan%C3%A7ados&amp;action=edit&amp;section=1" title="Lista de comandos avançados">editar</a>]</div><a name="Manipula.C3.A7.C3.A3o_de_texto"></a><h3> Manipulação de texto </h3>
+<p>(o editor de texto está em "ferramentas de programação")
+</p><p><br />
+</p>
+<table border="1">
+<tr>
+<td>Comando  	</td><td> Utilidade </td><td> sintaxe </td><td> Obs
+</td></tr>
+<tr>
+<td> cat </td><td> junta os arquivos dados e os imprime na tela </td><td> cat &lt;arquivo&gt; [arquivos] </td><td> "cat arquivo -" junta um arquivo com a entrada do teclado (ou o pipe, pois, como já vimos, elas são equivalentes)
+</td></tr>
+<tr>
+<td> grep </td><td> procura texto em arquivos (ou na entrada de teclado/pipe) </td><td> grep &lt;expressão&gt; [arquivo]  </td><td> desconfunda-se no artigo <a href="Terminal_avancado.html" title="Terminal avançado">Terminal avançado</a> (nele, há duas sessões dedicadas ao grep e várias outras menções)
+</td></tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.linux.ime.usp.br/mediawiki/index.php?title=Lista_de_comandos_avan%C3%A7ados&amp;action=edit&amp;section=2" title="Lista de comandos avançados">editar</a>]</div><a name="Ferramentas_de_programa.C3.A7.C3.A3o"></a><h3> Ferramentas de programação </h3>
+<table border="1">
+<tr>
+<td>Comando  	</td><td> Utilidade </td><td> sintaxe </td><td> Obs
+</td></tr>
+<tr>
+<td>vim </td><td> editor de texto </td><td> vim [arquivo] </td><td> (para aprende-lo, vimtutor, logo abaixo)
+</td></tr>
+<tr>
+<td>vimtutor </td><td> tutorial interativo de vim </td><td> vimtutor </td><td> procure em /usr/share/vim/vim70/tutor se quiser o original em inglês
+</td></tr>
+<tr>
+<td> gcc </td><td> compilar programas em C </td><td> gcc nome_do_programa.c </td><td> o executável produzido é o a.out (rode ./a.out)
+</td></tr>
+<tr>
+<td> gdb </td><td> debugar programas em C </td><td> </td><td>
+</td></tr>
+<tr>
+<td> ddd </td><td> debugar programas em C </td><td> </td><td>
+</td></tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.linux.ime.usp.br/mediawiki/index.php?title=Lista_de_comandos_avan%C3%A7ados&amp;action=edit&amp;section=3" title="Lista de comandos avançados">editar</a>]</div><a name="Processos:_Destravando_ou_evitando_travamentos"></a><h3> Processos: Destravando ou evitando travamentos </h3>
+<table border="1">
+<tr>
+<td>Comando  	</td><td> Utilidade </td><td> sintaxe </td><td> Obs
+</td></tr>
+<tr>
+<td> nice </td><td> ajusta a prioridade de um processo </td><td> nice -n 9 &lt;programa&gt; </td><td> ("-n 9" é o para prioridade baixa)
+</td></tr>
+<tr>
+<td> ps </td><td> lista os processos na máquina </td><td> ps aux </td><td> (opções padrão inclusas)
+</td></tr>
+<tr>
+<td> top </td><td> lista os processos na máquina, de forma bonitinha </td><td> top </td><td> o processo de cima é o máximo consumo de processador
+</td></tr>
+<tr>
+<td> kill </td><td> mata processos </td><td> kill (-9) &lt;PID&gt; </td><td>
+<ul><li> -9 é mais "bruto". Só tente se não deu sem.
+</li><li> Obtenha o PID com o ps
+</li></ul>
+</td></tr>
+<tr>
+<td> xkill </td><td> mata processos (com o mouse) </td><td> xkill </td><td> clique na janela com o mouse logo após rodar o programa
+</td></tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.linux.ime.usp.br/mediawiki/index.php?title=Lista_de_comandos_avan%C3%A7ados&amp;action=edit&amp;section=4" title="Lista de comandos avançados">editar</a>]</div><a name="Sortidos"></a><h3> Sortidos </h3>
+<table border="1">
+<tr>
+<td>Comando  	</td><td> Utilidade </td><td> sintaxe </td><td> Obs
+</td></tr>
+<tr>
+<td> chmod </td><td> muda as permissões de arquivos e diretórios </td><td> <a href="Terminal_avancado.html#Restringindo_o_acesso_aos_meus_arquivos" title="Terminal avançado">veja artigo</a> </td><td> <a href="Terminal_avancado.html#Restringindo_o_acesso_aos_meus_arquivos" title="Terminal avançado">veja artigo</a>
+</td></tr>
+<tr>
+<td> alias </td><td> associa um comando (digitado) a outro (executado)</td><td> <a href="Terminal_avancado.html#Personalizando_meu_terminal" title="Terminal avançado">veja artigo</a></td><td><a href="Terminal_avancado.html#Personalizando_meu_terminal" title="Terminal avançado">veja artigo</a>
+</td></tr>
+<tr>
+<td> screen </td><td> abre um terminal que sobrevive a logoffs </td><td> screen </td><td> para sair, ctrl-a-d, para voltar, "screen -r"
+</td></tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.linux.ime.usp.br/mediawiki/index.php?title=Lista_de_comandos_avan%C3%A7ados&amp;action=edit&amp;section=5" title="Lista de comandos avançados">editar</a>]</div><a name="Comandos_de_uso_menos_freq.C3.BCente"></a><h3> Comandos de uso menos freqüente </h3>
+<table border="1">
+<tr>
+<td>Comando  	</td><td> Utilidade </td><td> sintaxe </td><td> Obs
+</td></tr>
+<tr>
+<td> file 	</td><td> imprime o tipo de um arquivo (pdf,doc ...) </td><td> file &lt;arquivo&gt; </td><td>
+</td></tr>
+<tr>
+<td> which 	</td><td> imprime onde está um programa  </td><td> which &lt;programa&gt; 	</td><td> funciona para os programas que você pode disparar direto do terminal
+</td></tr>
+<tr>
+<td> whoami	</td><td> imprime seu nome de usuário 	</td><td> whoami </td><td>
+</td></tr>
+<tr>
+<td> mutt  </td><td> ver seus emails </td><td> mutt </td><td>
+</td></tr>
+<tr>
+<td> last  </td><td> lista os ultimos usuários a se conectarem à maquina em que você está </td><td> last [usuário] </td><td> use "last seu_nome_de_usuário" para ver de onde você se conectou as ultimas vezes.
+</td></tr>
+<tr>
+<td>seq </td><td> imprime a sequencia de "numero1" a "numero2" </td><td> seq numero1 numero2 </td><td> pode receber 1 ou 3 argumentos com outros efeitos similares
+</td></tr>
+<tr>
+<td>wc </td><td> wc </td><td> conta (caracteres, palavras, linhas ...) </td><td> wc -l para contar linhas
+</td></tr>
+</table>
+
+<!-- Saved in parser cache with key mediawiki:pcache:idhash:1492-0!1!0!0!!pt-br!2 and timestamp 20080121092203 -->
+<div class="printfooter">
+Retirado de  "<a href="Comandos_frequentes.html">http://www.linux.ime.usp.br/wiki/Comandos_frequentes</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(http://www.linux.ime.usp.br/mediawiki/skins/common/images/redelinux_logo.png);" href="P&#xc3;&#xa1;gina_principal.html" title="Página principal"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	</div>
+		<div class='portlet' id='p-Usando GNU/Linux'>
+		<h5>Usando GNU/Linux</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Terminal-básico"><a href="Terminal_basico.html">Terminal básico</a></li>
+				<li id="n-Terminal-avançado"><a href="Terminal_avancado.html">Terminal avançado</a></li>
+				<li id="n-Comandos-comuns"><a href="Comandos_frequentes.html">Comandos comuns</a></li>
+			</ul>
+		</div>
+	</div>
+		
+	<script type="text/javascript"> if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by sauna in 0.332 secs. -->
+</body>
+<!-- Mirrored from www.linux.ime.usp.br/wiki/Comandos_frequentes by HTTrack Website Copier/3.x [XR&CO'2007], Mon, 21 Jan 2008 17:53:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+</html>

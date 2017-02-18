@@ -1,0 +1,19 @@
+Resolução de Erros : 
+
+1 - Não foi possível obter acesso exclusivo ao directório de administração (/var/lib/dpkg/), outro processo está a utilizá-lo
+
+Resolução:
+
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/lib/dpkg/lock
+sudo dpkg --configure -a
+
+
+(O erro abaixo muitas vezes ocorre depois de ter feito a opção acima)
+
+2 - Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?
+
+Resolução:
+
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Comment=
+Terminal=false
+Name=Cisco Packet Tracer
+Exec=packettracer
+Type=Application
+Icon=/caminho/para/o/ícone/arquivo,jpg

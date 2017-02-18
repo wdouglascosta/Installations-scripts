@@ -1,0 +1,11 @@
+* sudo gedit /etc/hosts
+
+adiciona:
+
+127.0.0.1 wmfteste
+
+
+* sudo gedit /etc/apache2/sites-available/wmfteste.conf // cria arquivo de configurações
+
+* sudo a2ensite wmfteste.conf // habilita dominio
+

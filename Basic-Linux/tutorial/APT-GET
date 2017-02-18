@@ -1,0 +1,134 @@
+apt-get update 
+   	atualiza /etc/apt/sources.liss e /etc/apt/preferences
+   	que são as listas de fontes
+
+apt-get install nome_pacote
+	instala apps
+
+apt-get remove nome_pacote
+	remove apps
+
+apt-get --purge remove nome_pacote
+	remove apps com proferencias e configs
+
+apt-get upgrade
+	atualiza pacotes instalados
+
+apt-get dist-upgrade
+	atualiza sistema todos para uma nova versão
+
+apt-cache search termo
+	procura o termo na lista de pacotes disponiveis
+
+dpkg -l nome_pacote
+	lista pacotes instalados que casam com nome_pacote
+
+apitude
+	interface modo texto para Debian GNU/ Linux e Derivados.
+	funciona como o apt-get
+
+apt-cache showpkg pacotes
+	mostra info sobre pacotes
+
+apt-cache dumpavail
+	mostra lista de pacotes disponiveis
+
+apt_cache show pacotes
+	mostra registros dos pacotes, igual a dpkg --print-avail
+
+apt-cache pkgnames
+	rapida listagem de todos os pacotes instalados
+
+dpkg -S nome_arquivo
+	qual foi o pacote que instalou este arquivo?
+
+dpkg -L pacote
+	Mostra os arquivos instalados pelo pacote
+
+apt-file search NomeArquivo
+	Procura um pacote, não necessariamente instalado, que inclua o 
+	Nome Arquivo.
+
+apt-get autoclean
+	Exclui todos os arquivos .deb que não estão mais instalados no 		sistema.
+
+apt-get clean
+	Exclui até mesmo os arquivos .deb dos programas que estão 	instalados.
+
+apt-cdrom add
+	Adiciona um CD ao arquivo /etc/apt/sources.list, fazendo com 		que o apt-get procure pacotes no CD.
+
+
+=======================================================================
+Erros no apt-get?
+
+***********************************************************************
+-----------------------------------------------------------------------
+E: Não foi possível obter trava /var/lib/dpkg/lock – open (11: Recurso temporariamente indisponível)
+E: Não foi possível obter acesso exclusivo ao directório de administração (/var/lib/dpkg/), outro processo está a utilizá-lo?
+
+Procedimentos.
+
+ps aux | grep -i apt-get : lista apps em execução
+killall -9 apt-get : encerra todos apps
+----------------------------------------------------------------------
+E: Não foi possível criar acesso exclusivo ao directório de administração (/var/lib/dpkg/), é root?
+
+Procedimentos.
+
+Executar apt-get usando comando sudo
+
+-----------------------------------------------------------------------
+Sem solução até agora...
+
+Procedimentos: 
+
+Remover arquivos do sistema:
+
+sudo rm /var/lib/apt/lists/*
+sudo rm /var/lib/dpkg/lock
+sudo rm /var/cache/apt/archives/lock
+
+E dar um update:
+
+sudo apt-get update
+sudo dpkg --configure -a
+
+
+
+=======================================================================
+Examples:
+
+apt-cache search racing game
+	Procura pacotes de jogos de corrida
+
+obs : Dentre as respostas está o jogo torcs
+
+apt-cache show torcs
+	Traz informações sobre o game torcs
+
+obs : Legal, Mas este jogo ja esta instalado? Qual é a versão? Esta no repositorio main ou universe?
+
+apt-cache policy torcs
+
+obs : Nao está? vamos instala-lo
+
+apt-get install torcs
+
+obs : Qual o comando para iniciar este jogo? Poderia ser torcs, mas neste caso não. Para descobrir devemos olhar quais arquivos instalou em /usr/bin.
+- Jogos ficam em /usr/games
+- Programas administrativos ficam em /usr/sbin
+
+dpkg -L torcs|grep /usr/games/
+
+
+
+
+
+
+
+
+
+
+
+

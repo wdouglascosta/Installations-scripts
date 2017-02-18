@@ -1,0 +1,24 @@
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get install nomepacote --only-upgrade
+tar -vzxf arquivo.tar.gz
+apt-cache pkgnames
+
+
+sudo shutdown -h +60& ou sudo shutdown -h 11:54&
+sudo shutdown -c
+
+man nomecomando
+ls
+cd
+cp aquivo1 pasta/aquivo2
+cp -r pasta1 pasta2
+mv pasta1/arq1 pasta2
+more arquivo.txt
+df -h
+sudo
+clear
+grep -i "texto procurado" arquivo.txt
+
+
+killall -KILL <processo> : Mata todos o processos de <processo>

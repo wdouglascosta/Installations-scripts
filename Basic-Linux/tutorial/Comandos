@@ -1,0 +1,186 @@
+ls : listar diretório
+	-a : lista arquivos ocultos também
+	-l : lista detatalhada
+	-t : ordena por data
+
+cd : se locomove
+
+	- move entre primeiro e ultimo diretório
+	~ vai para diretório home
+	/ vai para diretório raiz
+	.. volta 1 diretório
+
+mkdir : cria diretório
+
+rmdir : remove diretório
+
+touch : cria arquivo caso não exista
+
+cp : copia arquivos ou diretórios
+	cp [arquivo] [pasta/nomearq]
+	cp -R pasta/ novalocal/ : copia pasta com todos arquivos. o R vem de recursivo, pois copia a pasta recursivamente.
+
+
+rm : remove arquivo
+	rm -R pasta/ : remove pasta com todos arquivos. o R vem de recursivo, pois remove a pasta recursivamente.
+
+mv : Move ou renomea arquivo
+	mv [arquivo] [novonome_arquivo]
+	mv [arquivo] [dir/nome_arquivo]
+
+
+pwd : mostra qual diretório está
+
+ln : Cria Links de arquivos ou diretórios
+
+	ln Arquivo pasta/arquivo : cria link Físico
+	ln -s Arquivo pasta/arquivo : Cria link Simbólico
+
+cat : lista conteudo de arquivo no terminal
+
+head : lista apenas 10 primeira linhas do arquivo
+	head -n 15 arquivo : mostra 15 primeiras linhas
+
+tail : lista 10 ultimas linhas
+	tail -n 15 arquivo : mostra 15 ultimas linhas
+
+echo : exibe o que digitar, usar o "" para uma unica string
+	echo [string] > arquivo : coloca conteudo arquivo
+
+file : mostra tipo do arquivo ou diretório
+
+*****************************************************************
+-------------------------------------
+> Apaga Arquivo e adiciona conteudno
+>> Adiciona no final
+
+Os resultados do bash podem ser salvos em arquivos.
+Ex: ls > arquivo.txt    ls >> arquivo.txt
+-------------------------------------
+**************************************************+
+date : horário do sistema
+
+cal : calendário
+	-m [nrmes]
+cal 12 : 12 meses do ano
+
+history : mostra histórico de comandos
+*****************************************************
+man : manual do comando
+whatis : mostra descrição breve do comando
+****************************************************
+vi : editor de arquivos bash
+
+aperta i para modo inserção.
+aperta <esc> para modo exibicao
+aperta : para passar comandos
+:w - salvar
+:wq - salvar e sair
+:q - sair
+:q! - sair sem salvar (forçar saida)
+
+QUANDO ESTIVER EM VISUALIZAÇÃO:
+
+A : entra em inserção no final da linha
+o : entra em inserção na linha de baixo
+x : deleta Proxima letra
+X : deleta letra Anterior
+dd : deleta toda linha
+
+
+********************************************************
+find : pesquisa bash
+
+find . -name <chave> : pesquisa no diretorio atual a <chave>
+find . -name \*.txt : pesquisa de acordo com coringa
+find . -user <usuario : pesquisa por arquivos de usuario
+find . -atime +1 : arquivos que foram alterado em 1 dia
+
+*******************************************************
+tar : empacota arquivos
+	Obs: A letra f sempre deve ser passada para dizer que são arquivos de discos e não fitas magnéticas.
+
+	-c : cria arquivo
+	-t : lista arquivo
+	-x : extrai arquivo
+
+example : tar -xf arquivo.tar
+
+	-z : compacta com gzip
+	-j : compacta com bzip2
+
+example : tar -czf arquivo.tar.gz
+	  tar -cjf arquivo.tar.bz2
+
+
+*********************************************************
+chmod : modifica permissões
+
+	r : leitura
+	w : escrita
+	x : execução
+
+	+ adiciona
+	- remove
+
+	u usuário
+	g grupo
+	o outros
+
+exemplo:
+	chmod +x arquivo : adiciona permissao de execução
+	chmod -x arquivo : remove permissao de execução
+
+	chmod u=rwx,g=rw,o=r arquivo
+	//altera permissões para user, group, others
+
+
+letras  |  Binário  |  Decimal  |  Significado
+
+---	     000	 0         sem permissão
+--x	     001         1         Permissão de execução	
+-w-          010         2         Escrita
+-wx          011         3         Escrita e Execução
+r--          100         4         Leitura
+r-x          101         5         Leitura e Execução
+rw-          110         6         Leitura e Escrita
+rwx          111         7         Permissão total  
+
+
+
+exemplo : chmod 777 arquivo   ->  permissão total
+		ugo : user|group|others
+
+	
+
+
+
+******************************************************************
+adduser e userdel : adiciona e remove usuario
+ex:
+	sudo adduser wmf2          sudo userdel wmf2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

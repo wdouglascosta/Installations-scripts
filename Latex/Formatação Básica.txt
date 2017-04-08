@@ -1,3 +1,6 @@
+Divisão do dos arquivos:
+
+Preâmbulo:
 
 \documentclass[a4paper, 12pt]{article}
 
@@ -6,6 +9,8 @@
 
 -- Para formatar margens
    \usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+
+Corpo do Texto:
 
 -- Para iniciar documento
    \begin{document}

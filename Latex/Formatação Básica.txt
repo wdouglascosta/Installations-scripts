@@ -1,0 +1,69 @@
+
+\documentclass[a4paper, 12pt]{article}
+
+-- Para aceitar acentos
+   \usepackage[utf8]{inputenc}
+
+-- Para formatar margens
+   \usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+
+-- Para iniciar documento
+   \begin{document}
+   \end{document}
+
+--Centralizar texto
+   \begin{center}
+   \end{center}
+
+-- Alinhar a direita texto
+   \begin{flushright}
+   \end{flushright}
+
+-- Alinhar a esquerda texto
+   \begin{flushleft}
+   \end{flushleft}
+
+-- Negrito
+   \textbf{seu texto}
+
+-- Itálico
+   \textit{seu texto}
+
+-- Sublinhado
+   \underline{seu texto}
+
+-- Para aplicar os três. Colocar um dentro de outro.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

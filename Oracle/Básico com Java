@@ -1,0 +1,79 @@
+------------------------------------------------ Subir versão Maven -----------------------------------------------------------------
+ mvn versions:set -DnewVersion=1.7.6
+ ------------------------------------------------ Baixar e instalar Oracle com Docker ------------------------------------------------
+ https://hub.docker.com/r/alexeiled/docker-oracle-xe-11g/
+ sudo docker run -d -p 1521:1521 -p 8890:8890 alexeiled/docker-oracle-xe-11g
+ ------------------------------------------------ Dropar e criar Usuario -------------------------------------------------------------
+ DROP USER NOME_USUARIO CASCADE;
+ CREATE USER NOME_USUARIO identified by SENHA;
+ GRANT DBA TO NOME_USUARIO;
+ ------------------------------------------------ Instalar Ojdbc6 com JAR ------------------------------------------------------------
+ mvn install:install-file -DgroupId=oracle -DartifactId=ojdbc6 -Dversion=11.2.0.3 -Dpackaging=jar -Dfile=ojdbc6-11.2.0.3.jar -DgeneratePom=true
+ ------------------------------------------------ Deletar Todas Tabelas --------------------------------------------------------------
+ BEGIN
+
+ FOR c IN (SELECT table_name FROM user_tables) LOOP
+ EXECUTE IMMEDIATE ('DROP TABLE "' || c.table_name || '" CASCADE CONSTRAINTS');
+ END LOOP;
+
+ FOR s IN (SELECT sequence_name FROM user_sequences) LOOP
+ EXECUTE IMMEDIATE ('DROP SEQUENCE ' || s.sequence_name);
+ END LOOP;
+ END;
+ ------------------------------------------------ Números e Letras Aleatórios --------------------------------------------------------
+ update NOME_TABELA set NOME_CAMPO = (select trunc(dbms_random.value(1,999999999) + ID) from dual);
+ update NOME_TABELA set NOME_CAMPO = (select dbms_random.string('L', 10) || '@' || ID from dual);
+ ------------------------------------------------ Importar Dump ----------------------------------------------------------------------
+ export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1/
+ CREATE TABLESPACE NOME_TABLE_SPACE
+ DATAFILE '/u01/app/oracle/oradata/orcl/NOME_ARQUIVO.ORA' SIZE 512M autoextend on next 128m maxsize 4096m
+ EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT AUTO;
+
+ create user NOME_USUARIO identified by SENHA
+ temporary tablespace temp
+ default tablespace NOME_TABLE_SPACE
+ quota unlimited on NOME_TABLE_SPACE
+ account unlock;
+ grant connect, resource,UNLIMITED TABLESPACE to NOME_USUARIO;
+
+ /u01/app/oracle/product/11.2.0/dbhome_1/bin/imp NOME_USUARIO/SENHA@orcl fromuser=NOME_USUARIO_ORIGEM file=NOME_DUMP.dmp log=imp_security.log touser=NOME_USUARIO_DESTINO feedback=2000 statistics=none buffer=64000
+
+ ------------------------------------------------ Exportar Dump -----------------------------------------------------------------------
+ /u01/app/oracle/product/11.2.0/dbhome_1/bin/exp NOME_USUARIO/SENHA@orcl file=NOME_DUMP.dmp log=IMP_NOME_LOG.log owner=NOME_USUARIO
+ ------------------------------------------------ Utilizando Liquibase -----------------------------------------------------------------
+ ./liquibase --driver="oracle.jdbc.OracleDriver" --classpath="ojdbc6.jar" --changeLogFile="changelogOracle.xml" --url="jdbc:oracle:thin:@192.168.25.79:1521:orcl" --username="NOME_USUARIO" --password="SENHA" generateChangeLog
+
+ [Sequence]
+ <preConditions onFail="MARK_RAN">
+     <not>
+        <sequenceExists sequenceName="hibernate_sequence"/>
+     </not>
+ </preConditions>
+
+ [Tabelas]
+ <preConditions onFail="MARK_RAN" onFailMessage="A Tabela std_db_configuration já existe.">
+     <not>
+        <tableExists tableName="associativecharacteristic"/>
+     </not>
+ </preConditions>
+
+ [PrimaryKeys]
+ <preConditions onFail="MARK_RAN">
+     <not>
+        <primaryKeyExists tableName="characteristicvalue_aud"/>
+     </not>
+ </preConditions>
+
+ [Index]
+ <preConditions onFail="MARK_RAN">
+     <not>
+        <indexExists indexName="uk_3inr0arx7tvpask2lxgu3lo7f"/>
+     </not>
+ </preConditions>
+
+ [ForeignKeys]
+ <preConditions onFail="MARK_RAN">
+     <not>
+        <foreignKeyConstraintExists foreignKeyName="fk_17qf20vxm0n7eq4cbgs6td4ks"/>
+     </not>
+ </preConditions>

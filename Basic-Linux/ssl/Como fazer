@@ -1,0 +1,33 @@
+1 - Gere os arquivos .key e .csr:
+ -> openssl req -new -newkey rsa:2048 -nodes -keyout seudominio.key -out seudominio.csr 
+ Obs: quando começar fazer perguntas sobre a organização, digite o dominio que vai ter o https
+2 - pegue o valor do csr e coloque na godaddy
+ -> cat seudominio.csr 
+3 - A godaddy vai te dar um codigo você vai precisar colocar esse codigo no arquivo html dentro do tomcat para validar se vc é dono.
+4 - Baixe os arquivos do certificado
+5 - A configuração deve ser como essa:
+<Connector port="443" scheme="https" secure="true" SSLEnabled="true"
+   SSLCertificateFile="/usr/local/java/apache-tomcat-8.5.11/certificado/2d4b6f2508cdf3cf.crt"
+   SSLCertificateKeyFile="/usr/local/java/apache-tomcat-8.5.11/certificado/dominio.key"
+   SSLPassword="minhasenha" 
+   SSLCertificateChainFile="/usr/local/java/apache-tomcat-8.5.11/certificado/gdig2.crt.pem"
+     keyAlias="tomcat" SSLProtocol="TLSv1"/>
+
+
+
+ou 
+
+
+
+wget https://dl.eff.org/certbot-auto
+chmod a+x certbot-auto
+
+
+./certbot-auto certonly --quiet --webroot -w /usr/local/java/apache-tomcat-8.5.11/webapps --agree-tos --email meuemail@gmail.com -d dominio.com -d www.dominio.com
+
+openssl pkcs12 -export -in /etc/letsencrypt/live/dominio.com/fullchain.pem -inkey /etc/letsencrypt/live/dominio.com/privkey.pem -out /etc/letsencrypt/live/dominio.com/pkcs.p12 -name tomcat -passin pass:minhasenha -passout pass:minhasenha 
+
+keytool -importkeystore -deststorepass minhasenha -destkeypass minhasenha -destkeystore /etc/letsencrypt/live/dominio.com/MyDSKeyStore.jks -srckeystore /etc/letsencrypt/live/dominio.com/pkcs.p12 -srcstoretype PKCS12 -srcstorepass minhasenha -alias tomcat
+
+cp /etc/letsencrypt/live/dominio.com/MyDSKeyStore.jks certificado-https/.keystore
+

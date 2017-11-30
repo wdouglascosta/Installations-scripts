@@ -31,3 +31,13 @@ keytool -importkeystore -deststorepass minhasenha -destkeypass minhasenha -destk
 
 cp /etc/letsencrypt/live/dominio.com/MyDSKeyStore.jks certificado-https/.keystore
 
+Colocar no server xml em conf:
+<Connector port="443" 
+        protocol="org.apache.coyote.http11.Http11NioProtocol"
+        SSLEnabled="true" 
+        scheme="https" 
+        secure="true"
+        keystoreFile="/root/certificado-https/.keystore" 
+        keystorePass="senha"
+        clientAuth="false" 
+        sslProtocol="TLS" />

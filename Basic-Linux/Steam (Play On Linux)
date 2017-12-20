@@ -1,0 +1,11 @@
+Age of Empires 2: HD Edition Full
+- Botão direito Steam 
+- Abrir Diretório aplicação
+- Ir para: /steamapps/common/Age2HD
+- Renomear Launcher.exe para Launcher.bkp
+- Renomear AoK.exe para Laucher.exe
+- Abrir steam 
+- Clicar com botão direito no game
+- Propriedades - Definir opções de inicialização
+- Colocar -nostartup
+- Jogar

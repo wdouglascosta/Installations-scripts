@@ -1,3 +1,8 @@
-Instalar plugins: Deploy to container Plugin, Themes, Slack
+Instalar plugins:
+  -Deploy to container Plugin;
+  -Simple Theme Plugin;
+  -Slack Notification Plugin
+  
+  
 
 http://mirrors.jenkins.io/war-stable/latest/jenkins.war
